@@ -1,132 +1,1090 @@
+
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"> <!--begin::Head-->
 
-        <title>Laravel</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>AdminLTE | Dashboard v2</title><!--begin::Primary Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="AdminLTE | Dashboard v2">
+    <meta name="author" content="ColorlibHQ">
+    <meta name="description" content="AdminLTE is a Free Bootstrap 5 Admin Dashboard, 30 example pages using Vanilla JS.">
+    <meta name="keywords" content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard"><!--end::Primary Meta Tags--><!--begin::Fonts-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous"><!--end::Fonts--><!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css" integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous"><!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Third Party Plugin(Bootstrap Icons)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous"><!--end::Third Party Plugin(Bootstrap Icons)--><!--begin::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="../../dist/css/adminlte.css"><!--end::Required Plugin(AdminLTE)--><!-- apexcharts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css" integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous">
+</head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--tw-bg-opacity: 1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gray-100{--tw-bg-opacity: 1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.border-gray-200{--tw-border-opacity: 1;border-color:rgb(229 231 235 / var(--tw-border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.text-center{text-align:center}.text-gray-200{--tw-text-opacity: 1;color:rgb(229 231 235 / var(--tw-text-opacity))}.text-gray-300{--tw-text-opacity: 1;color:rgb(209 213 219 / var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}.text-gray-600{--tw-text-opacity: 1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-700{--tw-text-opacity: 1;color:rgb(55 65 81 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity: 1;color:rgb(17 24 39 / var(--tw-text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--tw-bg-opacity: 1;background-color:rgb(31 41 55 / var(--tw-bg-opacity))}.dark\:bg-gray-900{--tw-bg-opacity: 1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:border-gray-700{--tw-border-opacity: 1;border-color:rgb(55 65 81 / var(--tw-border-opacity))}.dark\:text-white{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
+    <div class="app-wrapper"> <!--begin::Header-->
+        <nav class="app-header navbar navbar-expand bg-body"> <!--begin::Container-->
+            <div class="container-fluid"> <!--begin::Start Navbar Links-->
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"> <i class="bi bi-list"></i> </a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="#" class="nav-link">Home</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="#" class="nav-link">Contact</a> </li>
+                </ul> <!--end::Start Navbar Links--> <!--begin::End Navbar Links-->
+                <ul class="navbar-nav ms-auto"> <!--begin::Navbar Search-->
+                    <li class="nav-item"> <a class="nav-link" data-widget="navbar-search" href="#" role="button"> <i class="bi bi-search"></i> </a> </li> <!--end::Navbar Search--> <!--begin::Messages Dropdown Menu-->
+                    <li class="nav-item dropdown"> <a class="nav-link" data-bs-toggle="dropdown" href="#"> <i class="bi bi-chat-text"></i> <span class="navbar-badge badge text-bg-danger">3</span> </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <a href="#" class="dropdown-item"> <!--begin::Message-->
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            Brad Diesel
+                                            <span class="float-end fs-7 text-danger"><i class="bi bi-star-fill"></i></span>
+                                        </h3>
+                                        <p class="fs-7">Call me whenever you can...</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
+                                        </p>
+                                    </div>
+                                </div> <!--end::Message-->
                             </a>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <!--begin::Message-->
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            John Pierce
+                                            <span class="float-end fs-7 text-secondary"> <i class="bi bi-star-fill"></i> </span>
+                                        </h3>
+                                        <p class="fs-7">I got your message bro</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
+                                        </p>
+                                    </div>
+                                </div> <!--end::Message-->
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <!--begin::Message-->
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            Nora Silvester
+                                            <span class="float-end fs-7 text-warning"> <i class="bi bi-star-fill"></i> </span>
+                                        </h3>
+                                        <p class="fs-7">The subject goes here</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
+                                        </p>
+                                    </div>
+                                </div> <!--end::Message-->
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                        </div>
+                    </li> <!--end::Messages Dropdown Menu--> <!--begin::Notifications Dropdown Menu-->
+                    <li class="nav-item dropdown"> <a class="nav-link" data-bs-toggle="dropdown" href="#"> <i class="bi bi-bell-fill"></i> <span class="navbar-badge badge text-bg-warning">15</span> </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <span class="dropdown-item dropdown-header">15 Notifications</span>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i class="bi bi-envelope me-2"></i> 4 new messages
+                                <span class="float-end text-secondary fs-7">3 mins</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i class="bi bi-people-fill me-2"></i> 8 friend requests
+                                <span class="float-end text-secondary fs-7">12 hours</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i class="bi bi-file-earmark-fill me-2"></i> 3 new reports
+                                <span class="float-end text-secondary fs-7">2 days</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item dropdown-footer">
+                                See All Notifications
                             </a>
                         </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
+                    </li> <!--end::Notifications Dropdown Menu--> <!--begin::Fullscreen Toggle-->
+                    <li class="nav-item"> <a class="nav-link" href="#" data-lte-toggle="fullscreen"> <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i> <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none;"></i> </a> </li> <!--end::Fullscreen Toggle--> <!--begin::User Menu Dropdown-->
+                    <li class="nav-item dropdown user-menu"> <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img src="../../dist/assets/img/user2-160x160.jpg" class="user-image rounded-circle shadow" alt="User Image"> <span class="d-none d-md-inline">Alexander Pierce</span> </a>
+                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <!--begin::User Image-->
+                            <li class="user-header text-bg-primary"> <img src="../../dist/assets/img/user2-160x160.jpg" class="rounded-circle shadow" alt="User Image">
+                                <p>
+                                    Alexander Pierce - Web Developer
+                                    <small>Member since Nov. 2023</small>
+                                </p>
+                            </li> <!--end::User Image--> <!--begin::Menu Body-->
+                            <li class="user-body"> <!--begin::Row-->
+                                <div class="row">
+                                    <div class="col-4 text-center"> <a href="#">Followers</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Sales</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Friends</a> </div>
+                                </div> <!--end::Row-->
+                            </li> <!--end::Menu Body--> <!--begin::Menu Footer-->
+                            <li class="user-footer"> <a href="#" class="btn btn-default btn-flat">Profile</a> <a href="#" class="btn btn-default btn-flat float-end">Sign out</a> </li> <!--end::Menu Footer-->
+                        </ul>
+                    </li> <!--end::User Menu Dropdown-->
+                </ul> <!--end::End Navbar Links-->
+            </div> <!--end::Container-->
+        </nav> <!--end::Header--> <!--begin::Sidebar-->
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
+            <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link"> <!--begin::Brand Image--> <img src="../../dist/assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image opacity-75 shadow"> <!--end::Brand Image--> <!--begin::Brand Text--> <span class="brand-text fw-light">AdminLTE 4</span> <!--end::Brand Text--> </a> <!--end::Brand Link--> </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
+            <div class="sidebar-wrapper">
+                <nav class="mt-2"> <!--begin::Sidebar Menu-->
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i>
+                                <p>
+                                    Dashboard
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="./index.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Dashboard v1</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./index2.html" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Dashboard v2</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./index3.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Dashboard v3</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"> <a href="./generate/theme.html" class="nav-link"> <i class="nav-icon bi bi-palette"></i>
+                                <p>Theme Generate</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-seam-fill"></i>
+                                <p>
+                                    Widgets
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Small Box</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>info Box</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./widgets/cards.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Cards</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-clipboard-fill"></i>
+                                <p>
+                                    Layout Options
+                                    <span class="nav-badge badge text-bg-secondary me-3">6</span> <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="./layout/unfixed-sidebar.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Default Sidebar</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./layout/fixed-sidebar.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Fixed Sidebar</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./layout/layout-custom-area.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Layout <small>+ Custom Area </small></p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./layout/sidebar-mini.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Sidebar Mini</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./layout/collapsed-sidebar.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Sidebar Mini <small>+ Collapsed</small></p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./layout/logo-switch.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Sidebar Mini <small>+ Logo Switch</small></p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./layout/layout-rtl.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Layout RTL</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-tree-fill"></i>
+                                <p>
+                                    UI Elements
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="./UI/general.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>General</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./UI/icons.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Icons</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./UI/timeline.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Timeline</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-pencil-square"></i>
+                                <p>
+                                    Forms
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="./forms/general.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>General Elements</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-table"></i>
+                                <p>
+                                    Tables
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="./tables/simple.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Simple Tables</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-header">EXAMPLES</li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-arrow-in-right"></i>
+                                <p>
+                                    Auth
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-arrow-in-right"></i>
+                                        <p>
+                                            Version 1
+                                            <i class="nav-arrow bi bi-chevron-right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item"> <a href="./examples/login.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                                <p>Login</p>
+                                            </a> </li>
+                                        <li class="nav-item"> <a href="./examples/register.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                                <p>Register</p>
+                                            </a> </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-box-arrow-in-right"></i>
+                                        <p>
+                                            Version 2
+                                            <i class="nav-arrow bi bi-chevron-right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item"> <a href="./examples/login-v2.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                                <p>Login</p>
+                                            </a> </li>
+                                        <li class="nav-item"> <a href="./examples/register-v2.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                                <p>Register</p>
+                                            </a> </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"> <a href="./examples/lockscreen.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Lockscreen</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-header">DOCUMENTATIONS</li>
+                        <li class="nav-item"> <a href="./docs/introduction.html" class="nav-link"> <i class="nav-icon bi bi-download"></i>
+                                <p>Installation</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="./docs/layout.html" class="nav-link"> <i class="nav-icon bi bi-grip-horizontal"></i>
+                                <p>Layout</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="./docs/color-mode.html" class="nav-link"> <i class="nav-icon bi bi-star-half"></i>
+                                <p>Color Mode</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-ui-checks-grid"></i>
+                                <p>
+                                    Components
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="./docs/components/main-header.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Main Header</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="./docs/components/main-sidebar.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Main Sidebar</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-filetype-js"></i>
+                                <p>
+                                    Javascript
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="./docs/javascript/treeview.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Treeview</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"> <a href="./docs/browser-support.html" class="nav-link"> <i class="nav-icon bi bi-browser-edge"></i>
+                                <p>Browser Support</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="./docs/how-to-contribute.html" class="nav-link"> <i class="nav-icon bi bi-hand-thumbs-up-fill"></i>
+                                <p>How To Contribute</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="./docs/faq.html" class="nav-link"> <i class="nav-icon bi bi-question-circle-fill"></i>
+                                <p>FAQ</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="./docs/license.html" class="nav-link"> <i class="nav-icon bi bi-patch-check-fill"></i>
+                                <p>License</p>
+                            </a> </li>
+                        <li class="nav-header">MULTI LEVEL EXAMPLE</li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle-fill"></i>
+                                <p>Level 1</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle-fill"></i>
+                                <p>
+                                    Level 1
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Level 2</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>
+                                            Level 2
+                                            <i class="nav-arrow bi bi-chevron-right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-record-circle-fill"></i>
+                                                <p>Level 3</p>
+                                            </a> </li>
+                                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-record-circle-fill"></i>
+                                                <p>Level 3</p>
+                                            </a> </li>
+                                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-record-circle-fill"></i>
+                                                <p>Level 3</p>
+                                            </a> </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                        <p>Level 2</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle-fill"></i>
+                                <p>Level 1</p>
+                            </a> </li>
+                        <li class="nav-header">LABELS</li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle text-danger"></i>
+                                <p class="text">Important</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle text-warning"></i>
+                                <p>Warning</p>
+                            </a> </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-circle text-info"></i>
+                                <p>Informational</p>
+                            </a> </li>
+                    </ul> <!--end::Sidebar Menu-->
+                </nav>
+            </div> <!--end::Sidebar Wrapper-->
+        </aside> <!--end::Sidebar--> <!--begin::App Main-->
+        <main class="app-main"> <!--begin::App Content Header-->
+            <div class="app-content-header"> <!--begin::Container-->
+                <div class="container-fluid"> <!--begin::Row-->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h3 class="mb-0">Dashboard v2</h3>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-end">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Dashboard v2
+                                </li>
+                            </ol>
+                        </div>
+                    </div> <!--end::Row-->
+                </div> <!--end::Container-->
             </div>
-        </div>
-    </body>
+            <div class="app-content"> <!--begin::Container-->
+                <div class="container-fluid"> <!-- Info boxes -->
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="info-box"> <span class="info-box-icon text-bg-primary shadow-sm"> <i class="bi bi-gear-fill"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">CPU Traffic</span> <span class="info-box-number">
+                                        10
+                                        <small>%</small> </span> </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                        </div> <!-- /.col -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="info-box"> <span class="info-box-icon text-bg-danger shadow-sm"> <i class="bi bi-hand-thumbs-up-fill"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">Likes</span> <span class="info-box-number">41,410</span> </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                        </div> <!-- /.col --> <!-- fix for small devices only --> <!-- <div class="clearfix hidden-md-up"></div> -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="info-box"> <span class="info-box-icon text-bg-success shadow-sm"> <i class="bi bi-cart-fill"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">Sales</span> <span class="info-box-number">760</span> </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                        </div> <!-- /.col -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="info-box"> <span class="info-box-icon text-bg-warning shadow-sm"> <i class="bi bi-people-fill"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">New Members</span> <span class="info-box-number">2,000</span> </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                        </div> <!-- /.col -->
+                    </div> <!-- /.row --> <!--begin::Row-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="card-title">Monthly Recap Report</h5>
+                                    <div class="card-tools"> <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"> <i data-lte-icon="expand" class="bi bi-plus-lg"></i> <i data-lte-icon="collapse" class="bi bi-dash-lg"></i> </button>
+                                        <div class="btn-group"> <button type="button" class="btn btn-tool dropdown-toggle" data-bs-toggle="dropdown"> <i class="bi bi-wrench"></i> </button>
+                                            <div class="dropdown-menu dropdown-menu-end" role="menu"> <a href="#" class="dropdown-item">Action</a> <a href="#" class="dropdown-item">Another action</a> <a href="#" class="dropdown-item">
+                                                    Something else here
+                                                </a> <a class="dropdown-divider"></a> <a href="#" class="dropdown-item">Separated link</a> </div>
+                                        </div> <button type="button" class="btn btn-tool" data-lte-toggle="card-remove"> <i class="bi bi-x-lg"></i> </button>
+                                    </div>
+                                </div> <!-- /.card-header -->
+                                <div class="card-body"> <!--begin::Row-->
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p class="text-center"> <strong>Sales: 1 Jan, 2023 - 30 Jul, 2023</strong> </p>
+                                            <div id="sales-chart"></div>
+                                        </div> <!-- /.col -->
+                                        <div class="col-md-4">
+                                            <p class="text-center"> <strong>Goal Completion</strong> </p>
+                                            <div class="progress-group">
+                                                Add Products to Cart
+                                                <span class="float-end"><b>160</b>/200</span>
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar text-bg-primary" style="width: 80%"></div>
+                                                </div>
+                                            </div> <!-- /.progress-group -->
+                                            <div class="progress-group">
+                                                Complete Purchase
+                                                <span class="float-end"><b>310</b>/400</span>
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar text-bg-danger" style="width: 75%"></div>
+                                                </div>
+                                            </div> <!-- /.progress-group -->
+                                            <div class="progress-group"> <span class="progress-text">Visit Premium Page</span> <span class="float-end"><b>480</b>/800</span>
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar text-bg-success" style="width: 60%"></div>
+                                                </div>
+                                            </div> <!-- /.progress-group -->
+                                            <div class="progress-group">
+                                                Send Inquiries
+                                                <span class="float-end"><b>250</b>/500</span>
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar text-bg-warning" style="width: 50%"></div>
+                                                </div>
+                                            </div> <!-- /.progress-group -->
+                                        </div> <!-- /.col -->
+                                    </div> <!--end::Row-->
+                                </div> <!-- ./card-body -->
+                                <div class="card-footer"> <!--begin::Row-->
+                                    <div class="row">
+                                        <div class="col-md-3 col-6">
+                                            <div class="text-center border-end"> <span class="text-success"> <i class="bi bi-caret-up-fill"></i> 17%
+                                                </span>
+                                                <h5 class="fw-bold mb-0">$35,210.43</h5> <span class="text-uppercase">TOTAL REVENUE</span>
+                                            </div>
+                                        </div> <!-- /.col -->
+                                        <div class="col-md-3 col-6">
+                                            <div class="text-center border-end"> <span class="text-info"> <i class="bi bi-caret-left-fill"></i> 0%
+                                                </span>
+                                                <h5 class="fw-bold mb-0">$10,390.90</h5> <span class="text-uppercase">TOTAL COST</span>
+                                            </div>
+                                        </div> <!-- /.col -->
+                                        <div class="col-md-3 col-6">
+                                            <div class="text-center border-end"> <span class="text-success"> <i class="bi bi-caret-up-fill"></i> 20%
+                                                </span>
+                                                <h5 class="fw-bold mb-0">$24,813.53</h5> <span class="text-uppercase">TOTAL PROFIT</span>
+                                            </div>
+                                        </div> <!-- /.col -->
+                                        <div class="col-md-3 col-6">
+                                            <div class="text-center"> <span class="text-danger"> <i class="bi bi-caret-down-fill"></i> 18%
+                                                </span>
+                                                <h5 class="fw-bold mb-0">1200</h5> <span class="text-uppercase">GOAL COMPLETIONS</span>
+                                            </div>
+                                        </div>
+                                    </div> <!--end::Row-->
+                                </div> <!-- /.card-footer -->
+                            </div> <!-- /.card -->
+                        </div> <!-- /.col -->
+                    </div> <!--end::Row--> <!--begin::Row-->
+                    <div class="row"> <!-- Start col -->
+                        <div class="col-md-8"> <!--begin::Row-->
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-6"> <!-- DIRECT CHAT -->
+                                    <div class="card direct-chat direct-chat-warning">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Direct Chat</h3>
+                                            <div class="card-tools"> <span title="3 New Messages" class="badge text-bg-warning">
+                                                    3
+                                                </span> <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"> <i data-lte-icon="expand" class="bi bi-plus-lg"></i> <i data-lte-icon="collapse" class="bi bi-dash-lg"></i> </button> <button type="button" class="btn btn-tool" title="Contacts" data-lte-toggle="chat-pane"> <i class="bi bi-chat-text-fill"></i> </button> <button type="button" class="btn btn-tool" data-lte-toggle="card-remove"> <i class="bi bi-x-lg"></i> </button> </div>
+                                        </div> <!-- /.card-header -->
+                                        <div class="card-body"> <!-- Conversations are loaded here -->
+                                            <div class="direct-chat-messages"> <!-- Message. Default to the start -->
+                                                <div class="direct-chat-msg">
+                                                    <div class="direct-chat-infos clearfix"> <span class="direct-chat-name float-start">
+                                                            Alexander Pierce
+                                                        </span> <span class="direct-chat-timestamp float-end">
+                                                            23 Jan 2:00 pm
+                                                        </span> </div> <!-- /.direct-chat-infos --> <img class="direct-chat-img" src="../../dist/assets/img/user1-128x128.jpg" alt="message user image"> <!-- /.direct-chat-img -->
+                                                    <div class="direct-chat-text">
+                                                        Is this template really for free? That's
+                                                        unbelievable!
+                                                    </div> <!-- /.direct-chat-text -->
+                                                </div> <!-- /.direct-chat-msg --> <!-- Message to the end -->
+                                                <div class="direct-chat-msg end">
+                                                    <div class="direct-chat-infos clearfix"> <span class="direct-chat-name float-end">
+                                                            Sarah Bullock
+                                                        </span> <span class="direct-chat-timestamp float-start">
+                                                            23 Jan 2:05 pm
+                                                        </span> </div> <!-- /.direct-chat-infos --> <img class="direct-chat-img" src="../../dist/assets/img/user3-128x128.jpg" alt="message user image"> <!-- /.direct-chat-img -->
+                                                    <div class="direct-chat-text">
+                                                        You better believe it!
+                                                    </div> <!-- /.direct-chat-text -->
+                                                </div> <!-- /.direct-chat-msg --> <!-- Message. Default to the start -->
+                                                <div class="direct-chat-msg">
+                                                    <div class="direct-chat-infos clearfix"> <span class="direct-chat-name float-start">
+                                                            Alexander Pierce
+                                                        </span> <span class="direct-chat-timestamp float-end">
+                                                            23 Jan 5:37 pm
+                                                        </span> </div> <!-- /.direct-chat-infos --> <img class="direct-chat-img" src="../../dist/assets/img/user1-128x128.jpg" alt="message user image"> <!-- /.direct-chat-img -->
+                                                    <div class="direct-chat-text">
+                                                        Working with AdminLTE on a great new app! Wanna
+                                                        join?
+                                                    </div> <!-- /.direct-chat-text -->
+                                                </div> <!-- /.direct-chat-msg --> <!-- Message to the end -->
+                                                <div class="direct-chat-msg end">
+                                                    <div class="direct-chat-infos clearfix"> <span class="direct-chat-name float-end">
+                                                            Sarah Bullock
+                                                        </span> <span class="direct-chat-timestamp float-start">
+                                                            23 Jan 6:10 pm
+                                                        </span> </div> <!-- /.direct-chat-infos --> <img class="direct-chat-img" src="../../dist/assets/img/user3-128x128.jpg" alt="message user image"> <!-- /.direct-chat-img -->
+                                                    <div class="direct-chat-text">I would love to.</div> <!-- /.direct-chat-text -->
+                                                </div> <!-- /.direct-chat-msg -->
+                                            </div> <!-- /.direct-chat-messages--> <!-- Contacts are loaded here -->
+                                            <div class="direct-chat-contacts">
+                                                <ul class="contacts-list">
+                                                    <li> <a href="#"> <img class="contacts-list-img" src="../../dist/assets/img/user1-128x128.jpg" alt="User Avatar">
+                                                            <div class="contacts-list-info"> <span class="contacts-list-name">
+                                                                    Count Dracula
+                                                                    <small class="contacts-list-date float-end">
+                                                                        2/28/2023
+                                                                    </small> </span> <span class="contacts-list-msg">
+                                                                    How have you been? I was...
+                                                                </span> </div> <!-- /.contacts-list-info -->
+                                                        </a> </li> <!-- End Contact Item -->
+                                                    <li> <a href="#"> <img class="contacts-list-img" src="../../dist/assets/img/user7-128x128.jpg" alt="User Avatar">
+                                                            <div class="contacts-list-info"> <span class="contacts-list-name">
+                                                                    Sarah Doe
+                                                                    <small class="contacts-list-date float-end">
+                                                                        2/23/2023
+                                                                    </small> </span> <span class="contacts-list-msg">
+                                                                    I will be waiting for...
+                                                                </span> </div> <!-- /.contacts-list-info -->
+                                                        </a> </li> <!-- End Contact Item -->
+                                                    <li> <a href="#"> <img class="contacts-list-img" src="../../dist/assets/img/user3-128x128.jpg" alt="User Avatar">
+                                                            <div class="contacts-list-info"> <span class="contacts-list-name">
+                                                                    Nadia Jolie
+                                                                    <small class="contacts-list-date float-end">
+                                                                        2/20/2023
+                                                                    </small> </span> <span class="contacts-list-msg">
+                                                                    I'll call you back at...
+                                                                </span> </div> <!-- /.contacts-list-info -->
+                                                        </a> </li> <!-- End Contact Item -->
+                                                    <li> <a href="#"> <img class="contacts-list-img" src="../../dist/assets/img/user5-128x128.jpg" alt="User Avatar">
+                                                            <div class="contacts-list-info"> <span class="contacts-list-name">
+                                                                    Nora S. Vans
+                                                                    <small class="contacts-list-date float-end">
+                                                                        2/10/2023
+                                                                    </small> </span> <span class="contacts-list-msg">
+                                                                    Where is your new...
+                                                                </span> </div> <!-- /.contacts-list-info -->
+                                                        </a> </li> <!-- End Contact Item -->
+                                                    <li> <a href="#"> <img class="contacts-list-img" src="../../dist/assets/img/user6-128x128.jpg" alt="User Avatar">
+                                                            <div class="contacts-list-info"> <span class="contacts-list-name">
+                                                                    John K.
+                                                                    <small class="contacts-list-date float-end">
+                                                                        1/27/2023
+                                                                    </small> </span> <span class="contacts-list-msg">
+                                                                    Can I take a look at...
+                                                                </span> </div> <!-- /.contacts-list-info -->
+                                                        </a> </li> <!-- End Contact Item -->
+                                                    <li> <a href="#"> <img class="contacts-list-img" src="../../dist/assets/img/user8-128x128.jpg" alt="User Avatar">
+                                                            <div class="contacts-list-info"> <span class="contacts-list-name">
+                                                                    Kenneth M.
+                                                                    <small class="contacts-list-date float-end">
+                                                                        1/4/2023
+                                                                    </small> </span> <span class="contacts-list-msg">
+                                                                    Never mind I found...
+                                                                </span> </div> <!-- /.contacts-list-info -->
+                                                        </a> </li> <!-- End Contact Item -->
+                                                </ul> <!-- /.contacts-list -->
+                                            </div> <!-- /.direct-chat-pane -->
+                                        </div> <!-- /.card-body -->
+                                        <div class="card-footer">
+                                            <form action="#" method="post">
+                                                <div class="input-group"> <input type="text" name="message" placeholder="Type Message ..." class="form-control"> <span class="input-group-append"> <button type="button" class="btn btn-warning">
+                                                            Send
+                                                        </button> </span> </div>
+                                            </form>
+                                        </div> <!-- /.card-footer-->
+                                    </div> <!-- /.direct-chat -->
+                                </div> <!-- /.col -->
+                                <div class="col-md-6"> <!-- USERS LIST -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Latest Members</h3>
+                                            <div class="card-tools"> <span class="badge text-bg-danger">
+                                                    8 New Members
+                                                </span> <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"> <i data-lte-icon="expand" class="bi bi-plus-lg"></i> <i data-lte-icon="collapse" class="bi bi-dash-lg"></i> </button> <button type="button" class="btn btn-tool" data-lte-toggle="card-remove"> <i class="bi bi-x-lg"></i> </button> </div>
+                                        </div> <!-- /.card-header -->
+                                        <div class="card-body p-0">
+                                            <div class="row text-center m-1">
+                                                <div class="col-3 p-2"> <img class="img-fluid rounded-circle" src="../../dist/assets/img/user1-128x128.jpg" alt="User Image"> <a class="btn fw-bold fs-7 text-secondary text-truncate w-100 p-0" href="#">
+                                                        Alexander Pierce
+                                                    </a>
+                                                    <div class="fs-8">Today</div>
+                                                </div>
+                                                <div class="col-3 p-2"> <img class="img-fluid rounded-circle" src="../../dist/assets/img/user1-128x128.jpg" alt="User Image"> <a class="btn fw-bold fs-7 text-secondary text-truncate w-100 p-0" href="#">
+                                                        Norman
+                                                    </a>
+                                                    <div class="fs-8">Yesterday</div>
+                                                </div>
+                                                <div class="col-3 p-2"> <img class="img-fluid rounded-circle" src="../../dist/assets/img/user7-128x128.jpg" alt="User Image"> <a class="btn fw-bold fs-7 text-secondary text-truncate w-100 p-0" href="#">
+                                                        Jane
+                                                    </a>
+                                                    <div class="fs-8">12 Jan</div>
+                                                </div>
+                                                <div class="col-3 p-2"> <img class="img-fluid rounded-circle" src="../../dist/assets/img/user6-128x128.jpg" alt="User Image"> <a class="btn fw-bold fs-7 text-secondary text-truncate w-100 p-0" href="#">
+                                                        John
+                                                    </a>
+                                                    <div class="fs-8">12 Jan</div>
+                                                </div>
+                                                <div class="col-3 p-2"> <img class="img-fluid rounded-circle" src="../../dist/assets/img/user2-160x160.jpg" alt="User Image"> <a class="btn fw-bold fs-7 text-secondary text-truncate w-100 p-0" href="#">
+                                                        Alexander
+                                                    </a>
+                                                    <div class="fs-8">13 Jan</div>
+                                                </div>
+                                                <div class="col-3 p-2"> <img class="img-fluid rounded-circle" src="../../dist/assets/img/user5-128x128.jpg" alt="User Image"> <a class="btn fw-bold fs-7 text-secondary text-truncate w-100 p-0" href="#">
+                                                        Sarah
+                                                    </a>
+                                                    <div class="fs-8">14 Jan</div>
+                                                </div>
+                                                <div class="col-3 p-2"> <img class="img-fluid rounded-circle" src="../../dist/assets/img/user4-128x128.jpg" alt="User Image"> <a class="btn fw-bold fs-7 text-secondary text-truncate w-100 p-0" href="#">
+                                                        Nora
+                                                    </a>
+                                                    <div class="fs-8">15 Jan</div>
+                                                </div>
+                                                <div class="col-3 p-2"> <img class="img-fluid rounded-circle" src="../../dist/assets/img/user3-128x128.jpg" alt="User Image"> <a class="btn fw-bold fs-7 text-secondary text-truncate w-100 p-0" href="#">
+                                                        Nadia
+                                                    </a>
+                                                    <div class="fs-8">15 Jan</div>
+                                                </div>
+                                            </div> <!-- /.users-list -->
+                                        </div> <!-- /.card-body -->
+                                        <div class="card-footer text-center"> <a href="javascript:" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">View All Users</a> </div> <!-- /.card-footer -->
+                                    </div> <!-- /.card -->
+                                </div> <!-- /.col -->
+                            </div> <!--end::Row--> <!--begin::Latest Order Widget-->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Latest Orders</h3>
+                                    <div class="card-tools"> <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"> <i data-lte-icon="expand" class="bi bi-plus-lg"></i> <i data-lte-icon="collapse" class="bi bi-dash-lg"></i> </button> <button type="button" class="btn btn-tool" data-lte-toggle="card-remove"> <i class="bi bi-x-lg"></i> </button> </div>
+                                </div> <!-- /.card-header -->
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table m-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order ID</th>
+                                                    <th>Item</th>
+                                                    <th>Status</th>
+                                                    <th>Popularity</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td> <a href="pages/examples/invoice.html" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">OR9842</a> </td>
+                                                    <td>Call of Duty IV</td>
+                                                    <td> <span class="badge text-bg-success">
+                                                            Shipped
+                                                        </span> </td>
+                                                    <td>
+                                                        <div id="table-sparkline-1"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <a href="pages/examples/invoice.html" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">OR1848</a> </td>
+                                                    <td>Samsung Smart TV</td>
+                                                    <td> <span class="badge text-bg-warning">Pending</span> </td>
+                                                    <td>
+                                                        <div id="table-sparkline-2"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <a href="pages/examples/invoice.html" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">OR7429</a> </td>
+                                                    <td>iPhone 6 Plus</td>
+                                                    <td> <span class="badge text-bg-danger">
+                                                            Delivered
+                                                        </span> </td>
+                                                    <td>
+                                                        <div id="table-sparkline-3"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <a href="pages/examples/invoice.html" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">OR7429</a> </td>
+                                                    <td>Samsung Smart TV</td>
+                                                    <td> <span class="badge text-bg-info">Processing</span> </td>
+                                                    <td>
+                                                        <div id="table-sparkline-4"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <a href="pages/examples/invoice.html" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">OR1848</a> </td>
+                                                    <td>Samsung Smart TV</td>
+                                                    <td> <span class="badge text-bg-warning">Pending</span> </td>
+                                                    <td>
+                                                        <div id="table-sparkline-5"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <a href="pages/examples/invoice.html" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">OR7429</a> </td>
+                                                    <td>iPhone 6 Plus</td>
+                                                    <td> <span class="badge text-bg-danger">
+                                                            Delivered
+                                                        </span> </td>
+                                                    <td>
+                                                        <div id="table-sparkline-6"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <a href="pages/examples/invoice.html" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">OR9842</a> </td>
+                                                    <td>Call of Duty IV</td>
+                                                    <td> <span class="badge text-bg-success">Shipped</span> </td>
+                                                    <td>
+                                                        <div id="table-sparkline-7"></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- /.table-responsive -->
+                                </div> <!-- /.card-body -->
+                                <div class="card-footer clearfix"> <a href="javascript:void(0)" class="btn btn-sm btn-primary float-start">
+                                        Place New Order
+                                    </a> <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-end">
+                                        View All Orders
+                                    </a> </div> <!-- /.card-footer -->
+                            </div> <!-- /.card -->
+                        </div> <!-- /.col -->
+                        <div class="col-md-4"> <!-- Info Boxes Style 2 -->
+                            <div class="info-box mb-3 text-bg-warning"> <span class="info-box-icon"> <i class="bi bi-tag-fill"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">Inventory</span> <span class="info-box-number">5,200</span> </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                            <div class="info-box mb-3 text-bg-success"> <span class="info-box-icon"> <i class="bi bi-heart-fill"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">Mentions</span> <span class="info-box-number">92,050</span> </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                            <div class="info-box mb-3 text-bg-danger"> <span class="info-box-icon"> <i class="bi bi-cloud-download"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">Downloads</span> <span class="info-box-number">114,381</span> </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                            <div class="info-box mb-3 text-bg-info"> <span class="info-box-icon"> <i class="bi bi-chat-fill"></i> </span>
+                                <div class="info-box-content"> <span class="info-box-text">Direct Messages</span> <span class="info-box-number">163,921</span> </div> <!-- /.info-box-content -->
+                            </div> <!-- /.info-box -->
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3 class="card-title">Browser Usage</h3>
+                                    <div class="card-tools"> <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"> <i data-lte-icon="expand" class="bi bi-plus-lg"></i> <i data-lte-icon="collapse" class="bi bi-dash-lg"></i> </button> <button type="button" class="btn btn-tool" data-lte-toggle="card-remove"> <i class="bi bi-x-lg"></i> </button> </div>
+                                </div> <!-- /.card-header -->
+                                <div class="card-body"> <!--begin::Row-->
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div id="pie-chart"></div>
+                                        </div> <!-- /.col -->
+                                    </div> <!--end::Row-->
+                                </div> <!-- /.card-body -->
+                                <div class="card-footer p-0">
+                                    <ul class="nav nav-pills flex-column">
+                                        <li class="nav-item"> <a href="#" class="nav-link">
+                                                United States of America
+                                                <span class="float-end text-danger"> <i class="bi bi-arrow-down fs-7"></i>
+                                                    12%
+                                                </span> </a> </li>
+                                        <li class="nav-item"> <a href="#" class="nav-link">
+                                                India
+                                                <span class="float-end text-success"> <i class="bi bi-arrow-up fs-7"></i> 4%
+                                                </span> </a> </li>
+                                        <li class="nav-item"> <a href="#" class="nav-link">
+                                                China
+                                                <span class="float-end text-info"> <i class="bi bi-arrow-left fs-7"></i> 0%
+                                                </span> </a> </li>
+                                    </ul>
+                                </div> <!-- /.footer -->
+                            </div> <!-- /.card --> <!-- PRODUCT LIST -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Recently Added Products</h3>
+                                    <div class="card-tools"> <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse"> <i data-lte-icon="expand" class="bi bi-plus-lg"></i> <i data-lte-icon="collapse" class="bi bi-dash-lg"></i> </button> <button type="button" class="btn btn-tool" data-lte-toggle="card-remove"> <i class="bi bi-x-lg"></i> </button> </div>
+                                </div> <!-- /.card-header -->
+                                <div class="card-body p-0">
+                                    <div class="px-2">
+                                        <div class="d-flex border-top py-2 px-1">
+                                            <div class="col-2"> <img src="../../dist/assets/img/default-150x150.png" alt="Product Image" class="img-size-50"> </div>
+                                            <div class="col-10"> <a href="javascript:void(0)" class="fw-bold">
+                                                    Samsung TV
+                                                    <span class="badge text-bg-warning float-end">
+                                                        $1800
+                                                    </span> </a>
+                                                <div class="text-truncate">
+                                                    Samsung 32" 1080p 60Hz LED Smart HDTV.
+                                                </div>
+                                            </div>
+                                        </div> <!-- /.item -->
+                                        <div class="d-flex border-top py-2 px-1">
+                                            <div class="col-2"> <img src="../../dist/assets/img/default-150x150.png" alt="Product Image" class="img-size-50"> </div>
+                                            <div class="col-10"> <a href="javascript:void(0)" class="fw-bold">
+                                                    Bicycle
+                                                    <span class="badge text-bg-info float-end">
+                                                        $700
+                                                    </span> </a>
+                                                <div class="text-truncate">
+                                                    26" Mongoose Dolomite Men's 7-speed, Navy Blue.
+                                                </div>
+                                            </div>
+                                        </div> <!-- /.item -->
+                                        <div class="d-flex border-top py-2 px-1">
+                                            <div class="col-2"> <img src="../../dist/assets/img/default-150x150.png" alt="Product Image" class="img-size-50"> </div>
+                                            <div class="col-10"> <a href="javascript:void(0)" class="fw-bold">
+                                                    Xbox One
+                                                    <span class="badge text-bg-danger float-end">
+                                                        $350
+                                                    </span> </a>
+                                                <div class="text-truncate">
+                                                    Xbox One Console Bundle with Halo Master Chief
+                                                    Collection.
+                                                </div>
+                                            </div>
+                                        </div> <!-- /.item -->
+                                        <div class="d-flex border-top py-2 px-1">
+                                            <div class="col-2"> <img src="../../dist/assets/img/default-150x150.png" alt="Product Image" class="img-size-50"> </div>
+                                            <div class="col-10"> <a href="javascript:void(0)" class="fw-bold">
+                                                    PlayStation 4
+                                                    <span class="badge text-bg-success float-end">
+                                                        $399
+                                                    </span> </a>
+                                                <div class="text-truncate">
+                                                    PlayStation 4 500GB Console (PS4)
+                                                </div>
+                                            </div>
+                                        </div> <!-- /.item -->
+                                    </div>
+                                </div> <!-- /.card-body -->
+                                <div class="card-footer text-center"> <a href="javascript:void(0)" class="uppercase">
+                                        View All Products
+                                    </a> </div> <!-- /.card-footer -->
+                            </div> <!-- /.card -->
+                        </div> <!-- /.col -->
+                    </div> <!--end::Row-->
+                </div> <!--end::Container-->
+            </div> <!--end::App Content-->
+        </main> <!--end::App Main--> <!--begin::Footer-->
+        <footer class="app-footer"> <!--begin::To the end-->
+            <div class="float-end d-none d-sm-inline">Anything you want</div> <!--end::To the end--> <!--begin::Copyright--> <strong>
+                Copyright &copy; 2014-2024&nbsp;
+                <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+            </strong>
+            All rights reserved.
+            <!--end::Copyright-->
+        </footer> <!--end::Footer-->
+    </div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script> <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script> <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script> <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+    <script src="../../dist/js/adminlte.js"></script> <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+    <script>
+        const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
+        const Default = {
+            scrollbarTheme: "os-theme-light",
+            scrollbarAutoHide: "leave",
+            scrollbarClickScroll: true,
+        };
+        document.addEventListener("DOMContentLoaded", function() {
+            const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
+            if (
+                sidebarWrapper &&
+                typeof OverlayScrollbarsGlobal?.OverlayScrollbars !== "undefined"
+            ) {
+                OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
+                    scrollbars: {
+                        theme: Default.scrollbarTheme,
+                        autoHide: Default.scrollbarAutoHide,
+                        clickScroll: Default.scrollbarClickScroll,
+                    },
+                });
+            }
+        });
+    </script> <!--end::OverlayScrollbars Configure--> <!-- OPTIONAL SCRIPTS --> <!-- apexcharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js" integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8=" crossorigin="anonymous"></script>
+    <script>
+        // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
+        // IT'S ALL JUST JUNK FOR DEMO
+        // ++++++++++++++++++++++++++++++++++++++++++
+
+        /* apexcharts
+         * -------
+         * Here we will create a few charts using apexcharts
+         */
+
+        //-----------------------
+        // - MONTHLY SALES CHART -
+        //-----------------------
+
+        const sales_chart_options = {
+            series: [{
+                    name: "Digital Goods",
+                    data: [28, 48, 40, 19, 86, 27, 90],
+                },
+                {
+                    name: "Electronics",
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                },
+            ],
+            chart: {
+                height: 180,
+                type: "area",
+                toolbar: {
+                    show: false,
+                },
+            },
+            legend: {
+                show: false,
+            },
+            colors: ["#0d6efd", "#20c997"],
+            dataLabels: {
+                enabled: false,
+            },
+            stroke: {
+                curve: "smooth",
+            },
+            xaxis: {
+                type: "datetime",
+                categories: [
+                    "2023-01-01",
+                    "2023-02-01",
+                    "2023-03-01",
+                    "2023-04-01",
+                    "2023-05-01",
+                    "2023-06-01",
+                    "2023-07-01",
+                ],
+            },
+            tooltip: {
+                x: {
+                    format: "MMMM yyyy",
+                },
+            },
+        };
+
+        const sales_chart = new ApexCharts(
+            document.querySelector("#sales-chart"),
+            sales_chart_options,
+        );
+        sales_chart.render();
+
+        //---------------------------
+        // - END MONTHLY SALES CHART -
+        //---------------------------
+
+        function createSparklineChart(selector, data) {
+            const options = {
+                series: [{
+                    data
+                }],
+                chart: {
+                    type: "line",
+                    width: 150,
+                    height: 30,
+                    sparkline: {
+                        enabled: true,
+                    },
+                },
+                colors: ["var(--bs-primary)"],
+                stroke: {
+                    width: 2,
+                },
+                tooltip: {
+                    fixed: {
+                        enabled: false,
+                    },
+                    x: {
+                        show: false,
+                    },
+                    y: {
+                        title: {
+                            formatter: function(seriesName) {
+                                return "";
+                            },
+                        },
+                    },
+                    marker: {
+                        show: false,
+                    },
+                },
+            };
+
+            const chart = new ApexCharts(document.querySelector(selector), options);
+            chart.render();
+        }
+
+        const table_sparkline_1_data = [
+            25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54,
+        ];
+        const table_sparkline_2_data = [
+            12, 56, 21, 39, 73, 45, 64, 52, 36, 59, 44,
+        ];
+        const table_sparkline_3_data = [
+            15, 46, 21, 59, 33, 15, 34, 42, 56, 19, 64,
+        ];
+        const table_sparkline_4_data = [
+            30, 56, 31, 69, 43, 35, 24, 32, 46, 29, 64,
+        ];
+        const table_sparkline_5_data = [
+            20, 76, 51, 79, 53, 35, 54, 22, 36, 49, 64,
+        ];
+        const table_sparkline_6_data = [
+            5, 36, 11, 69, 23, 15, 14, 42, 26, 19, 44,
+        ];
+        const table_sparkline_7_data = [
+            12, 56, 21, 39, 73, 45, 64, 52, 36, 59, 74,
+        ];
+
+        createSparklineChart("#table-sparkline-1", table_sparkline_1_data);
+        createSparklineChart("#table-sparkline-2", table_sparkline_2_data);
+        createSparklineChart("#table-sparkline-3", table_sparkline_3_data);
+        createSparklineChart("#table-sparkline-4", table_sparkline_4_data);
+        createSparklineChart("#table-sparkline-5", table_sparkline_5_data);
+        createSparklineChart("#table-sparkline-6", table_sparkline_6_data);
+        createSparklineChart("#table-sparkline-7", table_sparkline_7_data);
+
+        //-------------
+        // - PIE CHART -
+        //-------------
+
+        const pie_chart_options = {
+            series: [700, 500, 400, 600, 300, 100],
+            chart: {
+                type: "donut",
+            },
+            labels: ["Chrome", "Edge", "FireFox", "Safari", "Opera", "IE"],
+            dataLabels: {
+                enabled: false,
+            },
+            colors: [
+                "#0d6efd",
+                "#20c997",
+                "#ffc107",
+                "#d63384",
+                "#6f42c1",
+                "#adb5bd",
+            ],
+        };
+
+        const pie_chart = new ApexCharts(
+            document.querySelector("#pie-chart"),
+            pie_chart_options,
+        );
+        pie_chart.render();
+
+        //-----------------
+        // - END PIE CHART -
+        //-----------------
+    </script> <!--end::Script-->
+</body><!--end::Body-->
+
 </html>
