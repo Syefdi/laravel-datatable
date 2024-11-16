@@ -2,6 +2,9 @@
 @section('content')
     <div class="content">
         <div class="row">
+            @include('products.index')
+        </div>
+        <div class="row">
             {{-- CONTENT ARTIKEL --}}
             <div class="col-12 mt-1">
                 @include('artikel.index')

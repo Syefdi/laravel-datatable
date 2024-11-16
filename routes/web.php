@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('content/index');
-});
+// Route::get('/', function () {
+//     return view('content/index');
+// });
 
 Route::get('/artikel', [ArticleController::class, 'index'])->name('artikel.index');
 Route::post('/artikel-store', [ArticleController::class, 'store'])->name('artikel.store');
@@ -24,3 +26,6 @@ Route::put('/artikel/{id}', [ArticleController::class, 'update'])->name('artikel
 Route::get('/artikel/{id}/edit', [ArticleController::class, 'edit'])->name('artikel.edit');
 Route::delete('/artikel-delete/{id}', [ArticleController::class, 'destroy'])->name('artikel.destroy');
 
+
+Route::resource('/', ProductController::class);
+Route::resource('/products', ProductController::class);
