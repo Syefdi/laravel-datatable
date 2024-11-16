@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UtamaController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,5 @@ Route::get('/artikel/{id}/edit', [ArticleController::class, 'edit'])->name('arti
 Route::delete('/artikel-delete/{id}', [ArticleController::class, 'destroy'])->name('artikel.destroy');
 
 
-Route::resource('/', ProductController::class);
+Route::resource('/', UtamaController::class);
 Route::resource('/products', ProductController::class);

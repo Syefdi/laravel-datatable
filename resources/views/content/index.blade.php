@@ -2,6 +2,7 @@
 @section('content')
     <div class="content">
         <div class="row">
+<<<<<<< HEAD
         <h1 class="my-4">Product List</h1>
         <a href="{{ route('create') }}" class="btn btn-primary mb-3">Create New Product</a>
         <div class="table-responsive">
@@ -34,14 +35,23 @@
                     @endforeach
                 </tbody>
             </table>
+=======
+            <div class="col-12 my-3">
+                @include('invoice.index')
+            </div>
+>>>>>>> 53a58270f72660dda04ca2ff1577e9c782fb7dd6
         </div>
     </div>
 
         <div class="row">
-            {{-- CONTENT ARTIKEL --}}
-            <div class="col-12 mt-1">
+            <div class="col-12 my-3">
+                @include('products.index')
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 my-3">
                 @include('artikel.index')
             </div>
-            {{-- END CONTENT ARTIKEL --}}
+        </div>
     </div>
 @endsection
