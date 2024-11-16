@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('content/index');
-});
+// Route::get('/', function () {
+//     return view('content/index');
+// });
 
 Route::get('/artikel', [ArticleController::class, 'index'])->name('artikel.index');
 Route::post('/artikel-store', [ArticleController::class, 'store'])->name('artikel.store');
@@ -27,5 +27,5 @@ Route::get('/artikel/{id}/edit', [ArticleController::class, 'edit'])->name('arti
 Route::delete('/artikel-delete/{id}', [ArticleController::class, 'destroy'])->name('artikel.destroy');
 
 
-// Route::resource('/', ProductController::class);
-// Route::resource('/products', ProductController::class);
+Route::resource('/', ProductController::class);
+Route::resource('/products', ProductController::class);
