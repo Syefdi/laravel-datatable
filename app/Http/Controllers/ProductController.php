@@ -10,7 +10,7 @@ class ProductController extends Controller
     // Menampilkan daftar produk
     public function index()
     {
-        $products = Product::all(); 
+        $products = Product::all();
         return view('content.index', compact('products'));
     }
 

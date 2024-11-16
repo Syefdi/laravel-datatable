@@ -3,7 +3,7 @@
     <div class="content">
         <div class="row">
             <div class="col-12 my-3">
-                @include('invoice.index')
+                {{-- @include('invoice.index') --}}
             </div>
         </div>
         <div class="row">
