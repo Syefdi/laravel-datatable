@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Product List</h1>
-    <a href="{{ route('products.create') }}">Create New Product</a>
+    <a href="{{ route('create') }}">Create New Product</a>
     <table border="1">
         <thead>
             <tr>
