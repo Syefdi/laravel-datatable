@@ -1,6 +1,6 @@
 <div class="container">
     <h1 class="my-4">Product List</h1>
-    <a href="{{ route('create') }}" class="btn btn-primary mb-3">Create New Product</a>
+    <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Create New Product</a>
     <div class="table-responsive">
         <table class="table table-bordered table-hover">
             <thead class="table-dark">
