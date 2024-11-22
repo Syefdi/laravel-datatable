@@ -4,6 +4,10 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UtamaController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\LianController;
+use App\Http\Controllers\ZidaneController;
+use App\Http\Controllers\IrfanController;
+use App\Http\Controllers\SyefdiController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 // Route::get('/', function () {
 //     return view('content/index');
 // });
@@ -33,5 +36,31 @@ Route::resource('/', UtamaController::class);
 Route::resource('/products', ProductController::class);
 Route::resource('/invoices', InvoiceController::class);
 
+Route::get('/halo', function () {
+    return 'Halo, Laravel!';
+});
+
+// Irfan
+// Return hasil dari 80*40/2
+// Route::get('/irfan', function() {
+//     return 'hasil nya adalah' . (80*40/2);
+// });
+
+Route::get('/irfan', [IrfanControllerr::class, 'index'])->name('irfan.index');
+Route::get('irfan/contoh/{name?}', [IrfanController::class, 'contoh'])->name('irfan.contoh');
 // /syefdi
+// Return hasil dari 80*20/4
+Route::get('/syefdi', [SyefdiController::class, 'index'])->name('syefdi.index');
+Route::get('/syefdi/syefdi/{nama?}', [SyefdiController::class, 'syefdi'])->name('syefdi.syefdi');
+// Zidane
+// Return hasil dari 1000*32/4
+Route::get('/zidane', [ZidaneController::class, 'index'])->name('zidane.index');
+Route::get('/zidane/contoh-view/{name?}', [ZidaneController::class, 'CopyView'])->name('zidane.contoh-view');
+
+Route::get('/lian', [LianController::class, 'index'])->name('lian.index');
+// Route::get('/lian/contoh-view/{nama?}', [LianController::class, 'contohView'])->name('lian.contoh-view');
+
+
+
 // Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoice.index');
+
