@@ -3,7 +3,7 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UtamaController;
-use App\Http\Controllers\SyefdiController;
+use App\Http\Controllers\InvoiceController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -31,5 +31,7 @@ Route::get('/artikel/{id}/edit', [ArticleController::class, 'edit'])->name('arti
 
 Route::resource('/', UtamaController::class);
 Route::resource('/products', ProductController::class);
+Route::resource('/invoices', InvoiceController::class);
+
 // /syefdi
-Route::get('/syefdi', [SyefdiController::class, 'index'])->name('syefdi.index');
+// Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoice.index');
