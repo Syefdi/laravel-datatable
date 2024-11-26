@@ -1,6 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
     <div class="container mt-5">
         <h1 class="mb-4">Create Product</h1>
         <form action="{{ route('products.store') }}" method="POST" class="p-4 border rounded shadow-sm">

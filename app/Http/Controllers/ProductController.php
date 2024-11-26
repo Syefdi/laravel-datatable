@@ -30,7 +30,7 @@ class ProductController extends Controller
         ]);
 
         Product::create($request->all());
-        return redirect()->route('products.index');
+        return redirect()->route('content.index');
     }
 
     // Menampilkan detail produk
