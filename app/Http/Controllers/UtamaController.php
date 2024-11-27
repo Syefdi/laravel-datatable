@@ -12,7 +12,8 @@ class UtamaController extends Controller
     public function index()
     {
         $products = Product::all();
-        $invoices = Invoice::orderBy('created_at', 'desc')->get();        
+        $invoices = Invoice::orderBy('created_at', 'desc')->get();   
+             
 
 
         return view('content.index', compact('products', 'invoices'));
