@@ -36,7 +36,7 @@ class InvoiceController extends Controller
             'status' => $request->status
         ]);
 
-        return redirect()->route('invoices.index')
+        return redirect()->route('index')
             ->with('success', 'Invoice berhasil dibuat.');
     }
 
@@ -65,7 +65,7 @@ class InvoiceController extends Controller
             'status' => $request->status
         ]);
 
-        return redirect()->route('invoices.index')
+        return redirect()->route('index')
             ->with('success', 'Invoice berhasil diupdate.');
     }
 
@@ -74,7 +74,7 @@ class InvoiceController extends Controller
         $invoices = Invoice::findOrFail($id);
         $invoices->delete();
 
-        return redirect()->route('invoices.index')
+        return redirect()->route('index')
             ->with('success', 'Invoice berhasil dihapus.');
     }
 }

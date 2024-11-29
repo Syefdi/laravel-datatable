@@ -1,7 +1,10 @@
+@extends('layouts.app')
+
+@section('content')
 <div class="container mt-4">
-    <div class="card">
-        <div class="card-header">
-            <h3>Tambah Invoice Baru</h3>
+    <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+            <h3 class="mb-0">Tambah Invoice Baru</h3>
         </div>
         <div class="card-body">
             <form action="{{ route('invoices.store') }}" method="POST">
@@ -29,11 +32,11 @@
                         <option value="Belum Lunas">Belum Lunas</option>
                     </select>
                 </div>
-                <div class="d-flex justify-content-between">
-                    <a href="{{ route('invoices.index') }}" class="btn btn-secondary">Kembali</a>
+                <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+@endsection
