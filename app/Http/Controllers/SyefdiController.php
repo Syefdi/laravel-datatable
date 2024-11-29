@@ -13,4 +13,8 @@ class SyefdiController extends Controller
 
             return view ('syefdi.contoh-view', ['nama' => $nama]);
     }
+    public function blog()
+    {
+        return view ('syefdi.blog.index');
+    } 
 }

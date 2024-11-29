@@ -11,8 +11,10 @@ class LianController extends Controller
     }
 
     public function contohView($nama = 'Lian'){
-
-
         return view('lian.contoh-view', ['nama' => $nama]);
+    }
+
+    public function blog(){
+        return view('lian.blog.blog');
     }
 }

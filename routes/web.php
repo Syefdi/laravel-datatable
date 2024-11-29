@@ -31,7 +31,6 @@ Route::put('/artikel/{id}', [ArticleController::class, 'update'])->name('artikel
 Route::delete('/artikel-delete/{id}', [ArticleController::class, 'destroy'])->name('artikel.destroy');
 Route::get('/artikel/{id}/edit', [ArticleController::class, 'edit'])->name('artikel.edit');
 
-
 Route::resource('/', UtamaController::class);
 Route::resource('/products', ProductController::class);
 Route::resource('/invoices', InvoiceController::class);
@@ -46,19 +45,25 @@ Route::get('/halo', function () {
 //     return 'hasil nya adalah' . (80*40/2);
 // });
 
-Route::get('/irfan', [IrfanControllerr::class, 'index'])->name('irfan.index');
+Route::get('/irfan', [IrfanController::class, 'index'])->name('irfan.index');
+Route::get('/irfan/blog', [IrfanController::class, 'blog'])->name('irfan.blog');
 Route::get('irfan/contoh/{name?}', [IrfanController::class, 'contoh'])->name('irfan.contoh');
 // /syefdi
 // Return hasil dari 80*20/4
 Route::get('/syefdi', [SyefdiController::class, 'index'])->name('syefdi.index');
-Route::get('/syefdi/syefdi/{nama?}', [SyefdiController::class, 'syefdi'])->name('syefdi.syefdi');
+Route::get('/syefdi/syefdi/{nama?}', [SyefdiController::class, 'syefdi'])->name('syefdi.contoh-view');
+Route::get('/syefdi/blog', [SyefdiController::class, 'blog'])->name('syefdi.blog');
+
 // Zidane
 // Return hasil dari 1000*32/4
 Route::get('/zidane', [ZidaneController::class, 'index'])->name('zidane.index');
 Route::get('/zidane/contoh-view/{name?}', [ZidaneController::class, 'CopyView'])->name('zidane.contoh-view');
+Route::get('/zidane/blog', [ZidaneController::class , 'blog'])->name('zidane.blog');
+
 
 Route::get('/lian', [LianController::class, 'index'])->name('lian.index');
-// Route::get('/lian/contoh-view/{nama?}', [LianController::class, 'contohView'])->name('lian.contoh-view');
+Route::get('/lian/contoh-view/{nama?}', [LianController::class, 'contohView'])->name('lian.contoh-view');
+Route::get('/lian/blog', [LianController::class, 'blog'])->name('lian.blog');
 
 
 
