@@ -1,8 +1,14 @@
-
 <div class="container mt-4">
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between align-items-center">
             <h3>Data Invoice</h3>
+            <a href="{{ route('invoices.create') }}" class="btn btn-primary">Tambah Invoice</a>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -14,6 +20,7 @@
                         <th>Total</th>
                         <th>Tanggal</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +37,16 @@
                                 @else
                                     <span class="badge bg-danger">{{ $invoice->status }}</span>
                                 @endif
+                            </td>
+                            <td>
+                                <a href="{{ route('invoices.edit', $invoice->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{ route('invoices.destroy', $invoice->id) }}" method="POST"
+                                    style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Yakin ingin menghapus?')">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
