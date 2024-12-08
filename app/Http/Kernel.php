@@ -53,6 +53,10 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
+        'syefdicek' => \App\Http\Middleware\SyefdiCheckDataLogin::class,
+        'irfancheck' => \App\Http\Middleware\IrfanCheckUserLogin::class,
+        'zidanecheck' => \App\Http\Middleware\ZidanCheckDataLogin::class,
+        'checkbanned' => \App\Http\Middleware\CheckUserBanned::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

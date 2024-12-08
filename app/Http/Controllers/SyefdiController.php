@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class SyefdiController extends Controller
 {
@@ -17,4 +18,20 @@ class SyefdiController extends Controller
     {
         return view ('syefdi.blog.index');
     } 
-}
+    public function login()
+    {
+        return view ('syefdi.auth.login');
+    }  
+    public function loginAction(Request $request)
+    {
+        $request->validate([
+            'username'  => 'required',
+            'password'  => 'required|min:6',
+        ]);
+        if (Auth::attempt($request->only('username', 'password'))) {
+            return redirect()->route('syefdi.blog')->with('success', 'login sukses!');
+        }
+        return back()->withErrors(['username' => 'username atau password salah.'])->withInput();
+    }
+
+}  
