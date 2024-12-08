@@ -5,6 +5,7 @@
         <table class="table table-bordered table-hover">
             <thead class="table-dark">
                 <tr>
+                    <th>NO</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Price</th>
@@ -15,6 +16,7 @@
             <tbody>
                 @foreach ($products as $product)
                     <tr>
+                        <td>{{$product->id}}</td>
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->price }}</td>
@@ -24,7 +26,7 @@
                             <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this?')">Delete</button>
                             </form>
                         </td>
                     </tr>
