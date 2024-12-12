@@ -19,7 +19,7 @@
                         </div> <!--end::Row-->
                     </li> <!--end::Menu Body--> <!--begin::Menu Footer-->
                     <li class="user-footer">
-                    <a href="{{ route('zidane.login') }}" class="btn btn-default btn-flat float-end">Sign out</a>
+                    <a href="{{ route('auth.login') }}" class="btn btn-default btn-flat float-end">Sign out</a>
 
 </li>
                 </ul>

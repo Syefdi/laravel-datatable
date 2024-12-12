@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -20,7 +21,7 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
-            return redirect()->route('irfan.blog')->with('success', 'Login berhasil!');
+            return redirect()->route('dashboard.index')->with('success', 'Login berhasil!');
         }
 
         return back()->withErrors([

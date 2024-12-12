@@ -9,14 +9,10 @@ use Yajra\DataTables\Facades\DataTables;
 
 class ArticleController extends Controller
 {
-    // public $user;
-    // public function __construct()
-    // {
-    //     $this->middleware(function ($request, $next) {
-    //         $this->user = Auth::guard('web')->user();
-    //         return $next($request);
-    //     });
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

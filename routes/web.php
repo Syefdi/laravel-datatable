@@ -8,6 +8,7 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\LianController;
 use App\Http\Controllers\ZidaneController;
 use App\Http\Controllers\IrfanController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SyefdiController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
@@ -26,17 +27,22 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard/index');
 // });
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::middleware(['auth'])->group(function() {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+    
+    Route::get('/artikel', [ArticleController::class, 'index'])->name('artikel.index');
+    Route::post('/artikel-store', [ArticleController::class, 'store'])->name('artikel.store');
+    Route::put('/artikel/{id}', [ArticleController::class, 'update'])->name('artikel.update');
+    Route::delete('/artikel-delete/{id}', [ArticleController::class, 'destroy'])->name('artikel.destroy');
+    Route::get('/artikel/{id}/edit', [ArticleController::class, 'edit'])->name('artikel.edit');
+    
+    // Route::resource('/', UtamaController::class);
+    Route::resource('/products', ProductController::class);
+    Route::resource('/invoices', InvoiceController::class);
+});
 
-Route::get('/artikel', [ArticleController::class, 'index'])->name('artikel.index');
-Route::post('/artikel-store', [ArticleController::class, 'store'])->name('artikel.store');
-Route::put('/artikel/{id}', [ArticleController::class, 'update'])->name('artikel.update');
-Route::delete('/artikel-delete/{id}', [ArticleController::class, 'destroy'])->name('artikel.destroy');
-Route::get('/artikel/{id}/edit', [ArticleController::class, 'edit'])->name('artikel.edit');
-
-// Route::resource('/', UtamaController::class);
-Route::resource('/products', ProductController::class);
-Route::resource('/invoices', InvoiceController::class);
+Route::get('login', [LoginController::class, 'index'])->name('auth.index');
+Route::post('login', [LoginController::class, 'login'])->name('auth.login');
 
 Route::get('/halo', function () {
     return 'Halo, Laravel!';    
