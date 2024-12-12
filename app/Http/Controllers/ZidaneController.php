@@ -21,12 +21,12 @@ class ZidaneController extends Controller
     }
     public function loginAction(Request $request){
         $request->validate([
-            'username' => 'required',
+            'email' => 'required',
             'password' => 'required|min:6',
         ]);
-        if(Auth::attempt($request->only('username', 'password'))){
+        if(Auth::attempt($request->only('email', 'password'))){
             return redirect()->route('zidane.blog')->with('success', 'login success!');
         }
-        return back()->withErrors(['username' => 'username atau password salah.'])->withInput();
+        return back()->withErrors(['email' => 'email atau password salah.'])->withInput();
     }
 }

@@ -19,7 +19,7 @@ class ZidanCheckDataLogin
     {
          if(Auth::check()){
             $zidane = Auth::user();
-            dd($zidane);
+            
          }
 
 

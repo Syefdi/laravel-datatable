@@ -1,7 +1,4 @@
 
-<div class="image">
-        <img src="{{ asset('zidan/th.jpeg') }}" alt="gambar anda tidak ada">
-    </div>
 
     <?php
     $menu = ['Home', 'Sport', 'Finance', 'Health'];
@@ -16,70 +13,92 @@
     ];
     $about_me = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. In adipisci suscipit minima asperiores, reprehenderit quaerat cum, excepturi maiores dolore alias eligendi eveniet facere rem, quidem minus aperiam illum nobis perspiciatis!';
     ?>
-     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, libero veritatis excepturi odit deserunt placeat id vero magnam numquam delectus pariatur quas aut distinctio ea ipsum, blanditiis quae molestias laborum!</p>
-    <table class="table">
-        <tr>
-            <?php foreach ($menu as $tableMenu): ?>
-                <th><?php echo $tableMenu; ?></th>
-            <?php endforeach; ?>
-        </tr>
-    </table>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <td>
-                    <table class="list">
-                        <tr>
-                            <td>
-                                <ul>Sport
-                                    <?php foreach ($sports as $sport): ?>
-                                        <li><?php echo $sport; ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <ol>Archive
-                                    <?php foreach ($archives as $archive): ?>
-                                        <li><?php echo $archive; ?></li>
-                                    <?php endforeach; ?>
-                                </ol>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table class="Finance">
-                        <?php foreach ($finance_content as $index => $content): ?>
-                            <tr>
-                                <td><?php echo $index + 1; ?>.</td>
-                                <td>
-                                    <img src="<?php echo $content['image']; ?>" alt="">
-                                    <td><?php echo $content['text']; ?></td>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </table>
-                </td>
-                <td>
-                    <table class="Me">
-                        <tr>
-                            <td>ALL About Me</td>
-                        </tr>
-                        <tr>
-                            <td class="OIP">
-                                <img src="{{ asset('zidan/th.jpeg') }}" alt="" class="cihuy">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p><?php echo $about_me; ?></p>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </thead>
-    </table>
+<div class="container mt-4">
+
+    <div class="text-center mb-4">
+        <img src="{{ asset('zidan/th.jpeg') }}" alt="Gambar tidak ada" class="img-fluid rounded shadow" style="max-width: 300px;">
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <?php foreach ($menu as $item): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><?= $item; ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <p class="lead text-center mb-5">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, libero veritatis excepturi odit deserunt placeat id vero magnam numquam.
+    </p>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Sports</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <?php foreach ($sports as $sport): ?>
+                        <li class="list-group-item"><?= $sport; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">Archives</h5>
+                </div>
+                <ol class="list-group list-group-numbered">
+                    <?php foreach ($archives as $archive): ?>
+                        <li class="list-group-item"><?= $archive; ?></li>
+                    <?php endforeach; ?>
+                </ol>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <h4 class="text-center mb-4">Finance Content</h4>
+            <?php foreach ($finance_content as $index => $content): ?>
+                <div class="card mb-3 shadow-sm">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="<?= $content['image']; ?>" class="img-fluid rounded-start" alt="Finance Image">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $index + 1; ?>.</h5>
+                                <p class="card-text"><?= $content['text']; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h5 class="mb-0">All About Me</h5>
+                </div>
+                <div class="text-center p-3">
+                    <img src="{{ asset('zidan/th.jpeg') }}" alt="Gambar Anda" class="img-thumbnail mb-3" style="max-width: 150px;">
+                </div>
+                <div class="card-body">
+                    <p><?= $about_me; ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
