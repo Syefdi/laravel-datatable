@@ -36,36 +36,49 @@ Route::resource('/products', ProductController::class);
 Route::resource('/invoices', InvoiceController::class);
 
 Route::get('/halo', function () {
-    return 'Halo, Laravel!';
+    return 'Halo, Laravel!';    
 });
 
 // Irfan
-// Return hasil dari 80*40/2
-// Route::get('/irfan', function() {
-//     return 'hasil nya adalah' . (80*40/2);
-// });
-
-Route::get('/irfan', [IrfanController::class, 'index'])->name('irfan.index');
-Route::get('/irfan/blog', [IrfanController::class, 'blog'])->name('irfan.blog');
-Route::get('irfan/contoh/{name?}', [IrfanController::class, 'contoh'])->name('irfan.contoh');
+// Middleware check data
+Route::prefix('irfan')->name('irfan.')->middleware('irfancheck')->group(function () {
+    Route::get('/', [IrfanController::class, 'index'])->name('index');
+    Route::get('/blog', [IrfanController::class, 'blog'])->name('blog');
+    Route::get('/contoh/{name?}', [IrfanController::class, 'contoh'])->name('contoh');
+    Route::get('/login', [IrfanController::class, 'login'])->name('login');
+    Route::post('/auth', [IrfanController::class, 'authLogin'])->name('auth');
+});
 // /syefdi
-// Return hasil dari 80*20/4
-Route::get('/syefdi', [SyefdiController::class, 'index'])->name('syefdi.index');
-Route::get('/syefdi/syefdi/{nama?}', [SyefdiController::class, 'syefdi'])->name('syefdi.contoh-view');
-Route::get('/syefdi/blog', [SyefdiController::class, 'blog'])->name('syefdi.blog');
+// Middleware check data
+Route::middleware(['syefdicek'])->prefix('syefdi')->name('syefdi.')->group(function () {
+    Route::get('/', [SyefdiController::class, 'index'])->name('index');
+    Route::get('/syefdi/{nama?}', [SyefdiController::class, 'syefdi'])->name('contoh-view');
+    Route::get('/blog', [SyefdiController::class, 'blog'])->name('blog');
+    Route::get('/login', [SyefdiController::class, 'login'])->name('login');
+    Route::post('/login-action', [SyefdiController::class, 'loginAction'])->name('login-action');
 
-// Zidane
-// Return hasil dari 1000*32/4
-Route::get('/zidane', [ZidaneController::class, 'index'])->name('zidane.index');
-Route::get('/zidane/contoh-view/{name?}', [ZidaneController::class, 'CopyView'])->name('zidane.contoh-view');
-Route::get('/zidane/blog', [ZidaneController::class , 'blog'])->name('zidane.blog');
+});
+// Zidan
+// Middleware check data
+Route::middleware(['zidanecheck'])->prefix('zidane')->name('zidane.')->group(function () {
+    Route::get('/', [ZidaneController::class, 'index'])->name('index');
+    Route::get('/contoh-view/{name?}', [ZidaneController::class, 'CopyView'])->name('contoh-view');
+    Route::get('/blog', [ZidaneController::class , 'blog'])->name('blog');
+    Route::get('/login', [ZidaneController::class, 'login'])->name('login');
+    Route::post('/login-action', [ZidaneController::class, 'loginAction'])->name('login-action');
+});
 
-
-Route::get('/lian', [LianController::class, 'index'])->name('lian.index');
-Route::get('/lian/contoh-view/{nama?}', [LianController::class, 'contohView'])->name('lian.contoh-view');
-Route::get('/lian/blog', [LianController::class, 'blog'])->name('lian.blog');
-
-
+// Lian
+Route::prefix('lian')->name('lian.')->group(function () {
+    Route::get('/', [LianController::class, 'index'])->name('index');
+    Route::get('/contoh-view/{nama?}', [LianController::class, 'contohView'])->name('contoh-view');
+    Route::get('/blog', [LianController::class, 'blog'])->name('blog');
+    Route::get('/login', [LianController::class, 'login'])->name('login');
+    Route::post('/login-action', [LianController::class, 'loginAction'])->name('login-action');
+});
+Route::get('/logout', function () {
+    Auth::logout();
+});
 
 // Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoice.index');
 
