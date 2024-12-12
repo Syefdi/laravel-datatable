@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Articles;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 
 class ArticleController extends Controller
 {
+    // public $user;
+    // public function __construct()
+    // {
+    //     $this->middleware(function ($request, $next) {
+    //         $this->user = Auth::guard('web')->user();
+    //         return $next($request);
+    //     });
+    // }
     /**
      * Display a listing of the resource.
      *

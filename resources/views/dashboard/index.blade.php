@@ -42,7 +42,7 @@
                     <div class="card-body">
                         <i class="fa-solid fa-newspaper fa-3x text-primary mb-3"></i>
                         <h5 class="card-title">Artikel</h5>
-                        <p class="card-text">Total Artikel: <strong>42</strong></p>
+                        <p class="card-text">Total Data : <strong>{{ $artikel }}</strong></p>
                         <a href="{{ route('artikel.index') }}" class="btn btn-primary">Lihat Artikel</a>
                     </div>
                 </div>
