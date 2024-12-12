@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UtamaController;
 use App\Http\Controllers\InvoiceController;
@@ -22,8 +23,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Route::get('/', function () {
-//     return view('content/index');
+//     return view('dashboard/index');
 // });
+
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 
 Route::get('/artikel', [ArticleController::class, 'index'])->name('artikel.index');
 Route::post('/artikel-store', [ArticleController::class, 'store'])->name('artikel.store');
@@ -31,7 +34,7 @@ Route::put('/artikel/{id}', [ArticleController::class, 'update'])->name('artikel
 Route::delete('/artikel-delete/{id}', [ArticleController::class, 'destroy'])->name('artikel.destroy');
 Route::get('/artikel/{id}/edit', [ArticleController::class, 'edit'])->name('artikel.edit');
 
-Route::resource('/', UtamaController::class);
+// Route::resource('/', UtamaController::class);
 Route::resource('/products', ProductController::class);
 Route::resource('/invoices', InvoiceController::class);
 
